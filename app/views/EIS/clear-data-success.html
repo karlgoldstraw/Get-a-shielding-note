@@ -1,39 +1,21 @@
+{% set pageTitle = "Data cleared" %}
 {% set version = "EIS" %}
 
 {% extends 'layout.html' %}
 
 {% block pageTitle %}
-  Example - passing data from page to page
+  {{ pageTitle }}
 {% endblock %}
 
-{% block beforeContent %}
-  {{ breadcrumb({
-    items: [
-      {
-        href: "/docs",
-        text: "Home"
-      }
-    ],
-    href: "/docs/how-tos",
-    text: "How to guides"
-  }) }}
-{% endblock %}
 
 {% block content %}
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-      <h1>
-        Data cleared
-      </h1>
+      <h1>{{ pageTitle }}</h1>
 
-      <p>
-        The session data has been cleared.
-      </p>
-
-      <p>
-        <a href="/{{ version }}">Start again</a>
-      </p>
+      <p>The session data has been cleared.</p>
+      <p><a href="/{{ version }}">Start again</a></p>
 
     </div>
   </div>
