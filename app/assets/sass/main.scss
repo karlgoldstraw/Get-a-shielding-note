@@ -8,5 +8,10 @@
 @import 'components/tag';
 
 ///////////////////////////////////////////
-// Add your custom CSS/Sass styles below... 
+// Add your custom CSS/Sass styles below...
 ///////////////////////////////////////////
+
+.nhsuk-back-link {
+  @include nhsuk-responsive-padding(4, 'top');
+  margin-bottom: 0;
+}
