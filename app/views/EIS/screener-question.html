@@ -1,4 +1,4 @@
-{% set pageTitle = "Have you been told to self-isolate by an NHS service or a healthcare professional" %}
+{% set pageTitle = "Are you at high risk from coronavirus (clinically extremely vulnerable)?" %}
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
 {% set version = "EIS" %}
 
@@ -26,9 +26,13 @@
           <fieldset class="nhsuk-fieldset">
             <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
               <h1 class="nhsuk-fieldset__heading">
-                Are you at high risk from coronavirus (clinically extremely vulnerable)?
+                {{ pageTitle }}
               </h1>
             </legend>
+
+            <span class="nhsuk-hint" id="isolation-date-hint">
+              You have previously received a letter advising you to take extra steps to protect yourself (shield).
+            </span>
 
             <div class="nhsuk-radios">
               <div class="nhsuk-radios__item">

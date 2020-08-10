@@ -1,3 +1,4 @@
+{% set version = "EIS" %}
 {% extends 'layout.html' %}
 
 {% block pageTitle %}
@@ -10,7 +11,7 @@
 
       <h1>Clear the session data</h1>
 
-      <form method="post">
+      <form method="post" action="/{{version}}/clear-data-success">
 
         {{ panel({
             "HTML": "<p>This will clear all of the data entered in this session</p>"
