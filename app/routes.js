@@ -72,7 +72,7 @@ router.post('/*/self-isolate-note-when/answer', function (req, res) {
   // Set prototype version
   var version = req.params[0];
 
-  // Check whether the answer is yes
+  // Check whether the answer is Today
   if (answer == "Today"){
     // If the answer is yes send to the next question
     res.redirect(`/${version}/note-name`);
@@ -83,13 +83,6 @@ router.post('/*/self-isolate-note-when/answer', function (req, res) {
   }
 
 })
-
-
-
-
-
-
-
 
 
 
