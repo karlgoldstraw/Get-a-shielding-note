@@ -86,14 +86,14 @@
             Shielding note start date
           </dt>
           <dd class="nhsuk-summary-list__value">
-            {% if data['self-isolate-note-when'] == “Today” %}
+            {% if data['self-isolate-note-when'] == "Today" %}
               Today
-              {% else %}
+            {% else %}
               {{ data['start-day'] }} {{ data['start-month'] }} {{ data['start-year'] }}
             {% endif %}
           </dd>
           <dd class="nhsuk-summary-list__actions">
-            <a href="/{{version}}/note-start-date">
+            <a href="/{{version}}/note-when">
               Change<span class="nhsuk-u-visually-hidden"> shielding note start date</span>
             </a>
           </dd>
