@@ -1,0 +1,37 @@
+{% set pageTitle = "You do not need a shielding note" %}
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+{% set version = "AS" %}
+
+{% extends "layout.html" %}
+
+{% block backLink %}
+<div class="nhsuk-back-link">
+  <a class="nhsuk-back-link__link" href="/{{version}}">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back
+  </a>
+</div>
+{% endblock %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1>{{ pageTitle }}</h1>
+
+      <p>You can <strong>only get a shielding note</strong> if you:</p>
+      <ul>
+        <li>are at high risk from coronavirus – you received a letter advising you to take extra steps to protect yourself (shield)</li>
+        <li>live outside of but work inside an area with a local outbreak (where shielding advice is in place)</li>
+        <li>cannot work from home</li>
+        <li>live in England</li>
+      </ul>
+
+      <p>If you are not sure if this applies to you, <a href="https://www.nhs.uk/conditions/coronavirus-covid-19/">speak to your GP surgery</a>, your employer or visit <a href="https://www.gov.uk/government/collections/local-restrictions-areas-with-an-outbreak-of-coronavirus-covid-19">GOV.UK</a> to find out about areas with local outbreaks</p>
+
+    </div>
+  </div>
+{% endblock %}
