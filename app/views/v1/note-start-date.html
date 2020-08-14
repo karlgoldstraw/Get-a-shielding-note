@@ -1,12 +1,12 @@
-{% set pageTitle = "What is your date of birth?" %}
+{% set pageTitle = "What date do you need this note to start from?" %}
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
-{% set version = "AS" %}
+{% set version = "v1" %}
 
 {% extends "layout.html" %}
 
 {% block backLink %}
 <div class="nhsuk-back-link">
-  <a class="nhsuk-back-link__link" href="/{{version}}/note-name">
+  <a class="nhsuk-back-link__link" href="/{{version}}/note-when">
     <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
       <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
     </svg>
@@ -20,7 +20,7 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-      <form method="post" action="/{{version}}/note-nhs-number">
+      <form method="post" action="/{{version}}/note-name">
 
         <div class="nhsuk-form-group">
           <fieldset class="nhsuk-fieldset">
@@ -29,32 +29,32 @@
             </legend>
 
             <span class="nhsuk-hint" id="isolation-date-hint">
-              For example 15 3 1984.
+              The earliest date you can enter is 1 8 2020.
             </span>
 
             <div class="nhsuk-date-input" id="example">
               <div class="nhsuk-date-input__item">
                 <div class="nhsuk-form-group">
-                  <label class="nhsuk-label nhsuk-date-input__label" for="dob-day">
+                  <label class="nhsuk-label nhsuk-date-input__label" for="example-day">
                     Day
                   </label>
-                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="dob-day" name="dob-day" type="number" pattern="[0-9]*" value="{{ data['dob-day'] }}">
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="start-day" name="start-day" type="number" pattern="[0-9]*" value="{{ data['start-day'] }}">
                 </div>
               </div>
               <div class="nhsuk-date-input__item">
                 <div class="nhsuk-form-group">
-                  <label class="nhsuk-label nhsuk-date-input__label" for="dob-month">
+                  <label class="nhsuk-label nhsuk-date-input__label" for="example-month">
                     Month
                   </label>
-                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="dob-month" name="dob-month" type="number" pattern="[0-9]*" value="{{ data['dob-month'] }}">
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="start-month" name="start-month" type="number" pattern="[0-9]*" value="{{ data['start-month'] }}">
                 </div>
               </div>
               <div class="nhsuk-date-input__item">
                 <div class="nhsuk-form-group">
-                  <label class="nhsuk-label nhsuk-date-input__label" for="dob-year">
+                  <label class="nhsuk-label nhsuk-date-input__label" for="example-year">
                     Year
                   </label>
-                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="dob-year" name="dob-year" type="number" pattern="[0-9]*" value="{{ data['dob-year'] }}">
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="start-year" name="start-year" type="number" pattern="[0-9]*" value="{{ data['start-year'] }}">
                 </div>
               </div>
             </div>
@@ -65,9 +65,7 @@
         {% from 'details/macro.njk' import details %}
         {{ details({
           "text": "Why are we asking this?",
-          "HTML": "<p>We need to include this information on your shielding note.</p>
-          <p>It helps identify you if there is more than 1 person with your name at your work.</p>
-          <p>Your date of birth will also be used to keep your shielding note secure.</p>"
+          "HTML": "<p>We need to include this information on your shielding note.</p>"
         }) }}
 
         <button class="nhsuk-button" type="submit">

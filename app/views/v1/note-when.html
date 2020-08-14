@@ -1,12 +1,12 @@
-{% set pageTitle = "Do you need to leave your home to go to work?" %}
+{% set pageTitle = "When do you need this note to start from?" %}
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
-{% set version = "EIS" %}
+{% set version = "v1" %}
 
 {% extends "layout.html" %}
 
 {% block backLink %}
 <div class="nhsuk-back-link">
-  <a class="nhsuk-back-link__link" href="/{{version}}/screener-question-live-work">
+  <a class="nhsuk-back-link__link" href="/{{version}}/screener-question-leave-home">
     <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
       <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
     </svg>
@@ -20,7 +20,7 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-      <form method="post" action="/{{version}}/screener-question-leave-home/answer">
+      <form method="post" action="/{{version}}/self-isolate-note-when/answer">
 
         <div class="nhsuk-form-group">
           <fieldset class="nhsuk-fieldset">
@@ -30,15 +30,15 @@
 
             <div class="nhsuk-radios">
               <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="self-isolate-1" name="self-isolate-leave-home" type="radio" value="yes" {{ checked("self-isolate-leave-home", "yes") }}>
+                <input class="nhsuk-radios__input" id="self-isolate-1" name="self-isolate-note-when" type="radio" value="Today" {{ checked("self-isolate-note-when", "Today") }}>
                 <label class="nhsuk-label nhsuk-radios__label" for="self-isolate-1">
-                  Yes
+                  Today
                 </label>
               </div>
               <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="self-isolate-2" name="self-isolate-leave-home" type="radio" value="no" {{ checked("self-isolate-leave-home", "no") }}>
+                <input class="nhsuk-radios__input" id="self-isolate-2" name="self-isolate-note-when" type="radio" value="Sometime in the past" {{ checked("self-isolate-note-when", "Sometime in the past") }}>
                 <label class="nhsuk-label nhsuk-radios__label" for="self-isolate-2">
-                  No
+                  Sometime in the past
                 </label>
               </div>
             </div>
@@ -49,7 +49,7 @@
         {% from 'details/macro.njk' import details %}
         {{ details({
           "text": "Why are we asking this?",
-          "HTML": "<p>You do not need a shielding note if you can work from home.</p>"
+          "HTML": "<p>We need to include this information on your shielding note.</p>"
         }) }}
 
         <button class="nhsuk-button" type="submit">

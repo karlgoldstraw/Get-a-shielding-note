@@ -1,12 +1,12 @@
-{% set pageTitle = "What is your NHS number?" %}
+{% set pageTitle = "What is your name?" %}
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
-{% set version = "AS" %}
+{% set version = "v1" %}
 
 {% extends "layout.html" %}
 
 {% block backLink %}
 <div class="nhsuk-back-link">
-  <a class="nhsuk-back-link__link" href="/{{version}}/note-dob">
+  <a class="nhsuk-back-link__link" href="/{{version}}/note-when">
     <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
       <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
     </svg>
@@ -20,7 +20,7 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-      <form method="post" action="/{{version}}/note-address">
+      <form method="post" action="/{{version}}/note-dob">
 
         <div class="nhsuk-form-group">
           <fieldset class="nhsuk-fieldset">
@@ -28,16 +28,20 @@
               <h1 class="nhsuk-fieldset__heading">{{ pageTitle }}</h1>
             </legend>
 
-            <span class="nhsuk-hint" id="isolation-date-hint">
-              Your NHS number is a 10 digit number that you find on any letter the NHS has sent you. For example, 485 777 3456.
-            </span>
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label" for="first-name">
+                First name
+              </label>
+              <input class="nhsuk-input" id="first-name" name="first-name" type="text" value="{{ data['first-name'] }}">
+            </div>
 
             <div class="nhsuk-form-group">
-              <label class="nhsuk-label" for="nhs-number">
-                Your NHS number
+              <label class="nhsuk-label" for="last-name">
+                Last name
               </label>
-              <input class="nhsuk-input" id="nhs-number" name="nhs-number" type="text" value="{{ data['nhs-number'] }}">
-            </div>
+              <input class="nhsuk-input" id="last-name" name="last-name" type="text" value="{{ data['last-name'] }}">
+
+          </div>
 
           </fieldset>
         </div>
@@ -45,10 +49,7 @@
         {% from 'details/macro.njk' import details %}
         {{ details({
           "text": "Why are we asking this?",
-          "HTML": "<p>We need to include this information on your shielding note.</p>
-          <p>It helps identify you if there is more than 1 person with your name at your work.</p>
-          <p>Your NHS number will also be used to keep your shielding note secure.</p>
-          <p>Read more about how to <a href='https://www.nhs.uk/using-the-nhs/about-the-nhs/what-is-an-nhs-number/'>find your NHS number</a> on the NHS website.</p>"
+          "HTML": "<p>We need to include this information on your shielding note.</p>"
         }) }}
 
         <button class="nhsuk-button" type="submit">
