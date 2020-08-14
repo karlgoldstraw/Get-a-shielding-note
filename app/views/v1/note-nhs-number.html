@@ -28,7 +28,7 @@
               <h1 class="nhsuk-fieldset__heading">{{ pageTitle }}</h1>
             </legend>
 
-            <span class="nhsuk-hint" id="isolation-date-hint">
+            <span class="nhsuk-hint" id="nhs-number-hint">
               Your NHS number is a 10 digit number that you find on any letter the NHS has sent you. For example, 485 777 3456.
             </span>
 
@@ -36,7 +36,7 @@
               <label class="nhsuk-label" for="nhs-number">
                 Your NHS number
               </label>
-              <input class="nhsuk-input" id="nhs-number" name="nhs-number" type="text" value="{{ data['nhs-number'] }}">
+              <input class="nhsuk-input" id="nhs-number" name="nhs-number" type="text" value="{{ data['nhs-number'] }}" aria-describedby="nhs-number-hint">
             </div>
 
           </fieldset>
