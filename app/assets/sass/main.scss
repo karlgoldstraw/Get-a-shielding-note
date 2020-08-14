@@ -15,8 +15,9 @@
   @include nhsuk-responsive-padding(4, 'top');
   margin-bottom: 0;
 }
-
-.white-box {
-  background: white;
-  @include nhsuk-responsive-padding(6);
+// IA breadcrumb styles for coronavirus hub pages
+.nhsuk-breadcrumb--hub {
+  background-color: transparent;
+  padding-bottom: nhsuk-spacing(3);
+  padding-top:  20px;
 }
