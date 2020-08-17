@@ -20,7 +20,7 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-      <form method="post" action="/{{version}}/note-address">
+      <form method="post" action="/{{version}}/check-your-answers">
 
         <div class="nhsuk-form-group">
           <fieldset class="nhsuk-fieldset">
@@ -30,6 +30,10 @@
 
             <span class="nhsuk-hint" id="nhs-number-hint">
               Your NHS number is a 10 digit number that you find on any letter the NHS has sent you. For example, 485 777 3456.
+            </span>
+
+            <span class="nhsuk-hint">
+              Read more about <a href="https://www.nhs.uk/using-the-nhs/about-the-nhs/what-is-an-nhs-number/">how to find your NHS number</a>.
             </span>
 
             <div class="nhsuk-form-group">
@@ -42,14 +46,19 @@
           </fieldset>
         </div>
 
-        {% from 'details/macro.njk' import details %}
-        {{ details({
-          "text": "Why are we asking this?",
-          "HTML": "<p>We need to include this information on your shielding note.</p>
-          <p>It helps identify you if there is more than 1 person with your name at your work.</p>
-          <p>Your NHS number will also be used to keep your shielding note secure.</p>
-          <p>Read more about how to <a href='https://www.nhs.uk/using-the-nhs/about-the-nhs/what-is-an-nhs-number/'>find your NHS number</a> on the NHS website.</p>"
-        }) }}
+        <details class="nhsuk-details">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              Why are we asking this?
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <p>We need to include this information on your shielding note.</p>
+            <p>We will use your NHS number to check if you are on the Shielding Person List.</p>
+            <p>It helps identify you if there is more than 1 person with your name at your work.</p>
+            <p>Your NHS number will also be used to keep your shielding note secure.</p>
+          </div>
+        </details>
 
         <button class="nhsuk-button" type="submit">
           Continue

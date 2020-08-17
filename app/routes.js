@@ -75,7 +75,7 @@ router.post('/*/self-isolate-note-when/answer', function (req, res) {
   // Check whether the answer is Today
   if (answer == "Today"){
     // If the answer is yes send to the next question
-    res.redirect(`/${version}/note-name`);
+    res.redirect(`/${version}/note-dob`);
   }
   else {
     // If the answer is no send to the no screen

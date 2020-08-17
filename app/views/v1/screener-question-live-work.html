@@ -1,4 +1,4 @@
-{% set pageTitle = "Do you live outside of but work inside an area with a local outbreak (where shielding advice is in place)?" %}
+{% set pageTitle = "Do you live outside of but work inside an area where advice to shield is in place?" %}
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
 {% set version = "v1" %}
 
@@ -46,11 +46,17 @@
           </fieldset>
         </div>
 
-        {% from 'details/macro.njk' import details %}
-        {{ details({
-          "text": "Why are we asking this?",
-          "HTML": "<p>We need to include this information on your shielding note. You do not need a shielding note if you live and work in the same area.</p>"
-        }) }}
+        <details class="nhsuk-details">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              Why are we asking this?
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <p>We need to include this information on your shielding note.</p>
+            <p>You only need to use this service if you live outside of but work inside an area where advice to shield is in place.</p>
+          </div>
+        </details>
 
         <button class="nhsuk-button" type="submit">
           Continue

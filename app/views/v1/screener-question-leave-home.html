@@ -46,11 +46,16 @@
           </fieldset>
         </div>
 
-        {% from 'details/macro.njk' import details %}
-        {{ details({
-          "text": "Why are we asking this?",
-          "HTML": "<p>You do not need a shielding note if you can work from home.</p>"
-        }) }}
+        <details class="nhsuk-details">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              Why are we asking this?
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <p>You do not need a shielding note if you can work from home or if you can work outside of an area where advice to shield is in place.</p>
+          </div>
+        </details>
 
         <button class="nhsuk-button" type="submit">
           Continue

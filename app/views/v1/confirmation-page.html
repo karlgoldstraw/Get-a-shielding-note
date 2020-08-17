@@ -10,23 +10,28 @@
     <div class="nhsuk-grid-column-two-thirds">
 
       <h1>{{ pageTitle }}</h1>
-      <p>We will send your shielding note by email if we have your email address on our system.</p>
-      <p>If we do not we will send it to the address you have provided.</p>
+      <p>We will now check the details you have sent.</p>
+      <p>If we can confirm you’re on the Shielding Person List we’ll send you a shielding note.</p>
+      <p>We will send your note by email if we have your email address in our system. If we do not, we will send you a letter in the post.</p>
 
       <h2>What you need to do next</h2>
       <p>Once you have your shielding note you can give it to your employer if they ask to see it.</p>
-      <p>They may check the details you have provided using the <a href="#?">Check a shielding note service</a>.</p>
+      <p>They may check the details you have provided using the <a href="#">Check a shielding note service</a>.</p>
 
       <h3>If you have not received your note</h3>
-      <p>If you have not received your shielding note after 4 days check your junk mail folder.</p>
-      <p>If there’s no email in your junk mail folder speak to your GP surgery.</p>
-      <p>You can speak to the GP surgery receptionist to explain the situation – they will decide if you need to speak to a GP.</p>
+      <p>If you have not received your shielding note by email after 4 days check your junk mail folder.</p>
+      <p>If there’s no email in your junk mail folder, and you have not received a letter in the post, speak to your GP surgery.</p>
+      <p>You can speak to the GP surgery receptionist to explain the situation – they’ll decide if you need to speak to a GP.</p>
 
+      <div class="nhsuk-warning-callout">
+        <h3 class="nhsuk-warning-callout__label">Important</h3>
+        <p>We’ll send you your shielding note using the email or address your GP surgery has on their system for you, so it’s important to make sure these details are up to date.</p>
+      </div>
 
-      {% from 'inset-text/macro.njk' import insetText %}
-      {{ insetText({
-        "HTML": "<h2>Sign up to the NHS App</h2>
-        <p>If you need medical advice you can also get it by <a href=https://www.nhs.uk/using-the-nhs/nhs-services/the-nhs-app/'>signing up to the NHS App</a>.</p>
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <h2>Sign up to the NHS App</h2>
+        <p>If you need medical advice you can also get it by <a href="https://www.nhs.uk/using-the-nhs/nhs-services/the-nhs-app/">signing up to the NHS App</a>.</p>
         <p>Owned and run by the NHS, the NHS App is a simple and secure way to get access to a range of NHS services on your smartphone or tablet.</p>
         <p>You can:</p>
         <ul>
@@ -35,9 +40,8 @@
           <li>book appointments</li>
           <li>check your symptoms</li>
         </ul>
-        <p>Read more about how to <a href='https://www.nhs.uk/using-the-nhs/nhs-services/the-nhs-app/'>sign up for the NHS App</a> on the NHS website.</p>"
-      }) }}
-
+        <p>Read more about how to <a href="https://www.nhs.uk/using-the-nhs/nhs-services/the-nhs-app/">sign up for the NHS App</a> on the NHS website.</p>
+      </div>
 
     </div>
   </div>
