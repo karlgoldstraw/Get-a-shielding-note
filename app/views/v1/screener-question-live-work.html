@@ -1,4 +1,4 @@
-{% set pageTitle = "Do you live outside of but work inside an area where advice to shield is in place?" %}
+{% set pageTitle = "Do you work in an area where you're advised to shield, but do not live there?" %}
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
 {% set version = "v1" %}
 
@@ -28,6 +28,10 @@
               <h1 class="nhsuk-fieldset__heading">{{ pageTitle }}</h1>
             </legend>
 
+            <span class="nhsuk-hint">
+              <a href="https://www.gov.uk/government/collections/local-restrictions-areas-with-an-outbreak-of-coronavirus-covid-19" target="_blank" rel="noopener noreferrer">Visit GOV.UK to find out which areas have local restrictions (link opens in a new window)</a>
+            </span>
+
             <div class="nhsuk-radios">
               <div class="nhsuk-radios__item">
                 <input class="nhsuk-radios__input" id="self-isolate-1" name="self-isolate-live-work" type="radio" value="yes" {{ checked("self-isolate-live-work", "yes") }}>
@@ -54,7 +58,6 @@
           </summary>
           <div class="nhsuk-details__text">
             <p>We need to include this information on your shielding note.</p>
-            <p>You only need to use this service if you live outside of but work inside an area where advice to shield is in place.</p>
           </div>
         </details>
 
