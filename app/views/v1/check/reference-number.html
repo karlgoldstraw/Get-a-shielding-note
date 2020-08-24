@@ -1,5 +1,4 @@
 {% set pageTitle = "Enter the shielding note reference number" %}
-{% set pageDescription = "Use this service if you are an employer and want to check that a coronavirus shielding note is valid." %}
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
 {% set version = "v1" %}
 
@@ -17,7 +16,7 @@
       </a>
     </div>
     <div class="nhsuk-header__transactional-service-name nhsuk-header__transactional-service-name--long">
-      <a class="nhsuk-header__transactional-service-name--link" href="/{{version}}/check">Check an shielding note</a>
+      <a class="nhsuk-header__transactional-service-name--link" href="/{{version}}/check">Check a shielding note</a>
     </div>
   </div>
 </header>
@@ -43,11 +42,11 @@
         <div class="nhsuk-form-group">
          <h1 class="nhsuk-label-wrapper">
             <label class="nhsuk-label nhsuk-label--l nhsuk-u-margin-bottom-2" for="reference-number">
-              Enter the shielding note reference number
+              {{ pageTitle }}
             </label>
           </h1>
           <span class="nhsuk-hint" id="reference-number-hint">
-            This is the 16 digit number you can find on the shielding note or in the confirmation email.
+            This is the 16 digit number you can find on the shielding note.
           </span>
           <input class="nhsuk-input nhsuk-input--width-10" id="reference-number" name="reference-number" type="text" aria-describedby="reference-number-hint" inputmode="numeric" spellcheck="false" value="{{ data['reference-number'] }}">
         </div>
