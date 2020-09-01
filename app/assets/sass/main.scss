@@ -21,3 +21,8 @@
   padding-bottom: nhsuk-spacing(3);
   padding-top:  20px;
 }
+
+// Overrides auto reload div background colour
+#hc_extension_bkgnd {
+  background-color: $color_nhsuk-grey-4 !important;
+}

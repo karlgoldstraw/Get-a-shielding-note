@@ -21,7 +21,8 @@ const config = require('./app/config');
 const locals = require('./app/locals');
 const routes = require('./app/routes');
 const documentationRoutes = require('./docs/documentation_routes');
-const utils = require('./lib/utils.js')
+const utils = require('./lib/utils.js');
+const validation = require('./middleware/validation');
 
 // Set configuration variables
 const port = process.env.PORT || config.port;
@@ -102,6 +103,7 @@ if (useAutoStoreData === 'true') {
   utils.addCheckedFunction(nunjucksAppEnv)
 }
 
+app.use(validation);
 
 // initial checks
 checkFiles()
