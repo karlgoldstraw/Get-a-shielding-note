@@ -23,27 +23,18 @@
       <form method="post" action="/{{version}}/check-your-answers">
 
         <div class="nhsuk-form-group">
-          <fieldset class="nhsuk-fieldset">
-            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-              <h1 class="nhsuk-fieldset__heading">{{ pageTitle }}</h1>
-            </legend>
-
-            <span class="nhsuk-hint" id="nhs-number-hint">
-              Your NHS number is a 10 digit number that you find on any letter the NHS has sent you. For example, 485 777 3456.
-            </span>
-
-            <span class="nhsuk-hint">
-              Read more about <a href="https://www.nhs.uk/using-the-nhs/about-the-nhs/what-is-an-nhs-number/" target="_blank" rel="noopener noreferrer">how to find your NHS number (link opens in a new window)</a>.
-            </span>
-
-            <div class="nhsuk-form-group">
-              <label class="nhsuk-label" for="nhs-number">
-                Your NHS number
-              </label>
-              <input class="nhsuk-input" id="nhs-number" name="nhs-number" type="text" value="{{ data['nhs-number'] }}" aria-describedby="nhs-number-hint">
-            </div>
-
-          </fieldset>
+          <h1 class="nhsuk-label-wrapper">
+            <label class="nhsuk-label nhsuk-label--l nhsuk-u-margin-bottom-2" for="nhs-number">
+              {{ pageTitle }}
+            </label>
+          </h1>
+          <span class="nhsuk-hint" id="nhs-number-hint">
+            Your NHS number is a 10 digit number that you find on any letter the NHS has sent you. For example, 485 777 3456.
+          </span>
+          <span class="nhsuk-hint">
+            Read more about <a href="https://www.nhs.uk/using-the-nhs/about-the-nhs/what-is-an-nhs-number/" target="_blank" rel="noopener noreferrer">how to find your NHS number (link opens in a new window)</a>.
+          </span>
+          <input class="nhsuk-input" id="nhs-number" name="nhs-number" type="text" value="{{ data['nhs-number'] }}" aria-describedby="nhs-number-hint">
         </div>
 
         <details class="nhsuk-details">
