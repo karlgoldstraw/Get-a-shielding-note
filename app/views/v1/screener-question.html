@@ -22,13 +22,26 @@
 
       <form method="post" action="/{{version}}/screener-question/answer">
 
-        <div class="nhsuk-form-group">
-          <fieldset class="nhsuk-fieldset">
+        {% if hasErrors %} 
+          {{ errorSummary({
+            "titleText": "There is a problem",
+            "errorList": errorList
+          }) }}
+        {% endif %}
+
+        <div class="nhsuk-form-group{% if hasErrors %} nhsuk-form-group--error{% endif %}">
+          <fieldset class="nhsuk-fieldset"{% if hasErrors %} aria-describedby="self-isolate-error"{% endif %}>
             <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
               <h1 class="nhsuk-fieldset__heading">
                 {{ pageTitle }}
               </h1>
             </legend>
+
+            {% if hasErrors %}
+              <span class="nhsuk-error-message" id="self-isolate-error">
+                <span class="nhsuk-u-visually-hidden">Error:</span> Select if you are at high risk from coronavirus (clinically extremely vulnerable)
+              </span>
+            {% endif %}
 
             <span class="nhsuk-hint">
               You received a letter from the NHS saying you are high risk or on the shielded patient list.
@@ -36,14 +49,14 @@
 
             <div class="nhsuk-radios">
               <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="self-isolate-1" name="self-isolate" type="radio" value="yes" {{ checked("self-isolate", "yes") }}>
-                <label class="nhsuk-label nhsuk-radios__label" for="self-isolate-1">
+                <input class="nhsuk-radios__input" id="self-isolate" name="self-isolate" type="radio" value="yes" {{ checked("self-isolate", "yes") }}>
+                <label class="nhsuk-label nhsuk-radios__label" for="self-isolate">
                   Yes
                 </label>
               </div>
               <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="self-isolate-2" name="self-isolate" type="radio" value="no" {{ checked("self-isolate", "no") }}>
-                <label class="nhsuk-label nhsuk-radios__label" for="self-isolate-2">
+                <input class="nhsuk-radios__input" id="self-isolate-1" name="self-isolate" type="radio" value="no" {{ checked("self-isolate", "no") }}>
+                <label class="nhsuk-label nhsuk-radios__label" for="self-isolate-1">
                   No
                 </label>
               </div>

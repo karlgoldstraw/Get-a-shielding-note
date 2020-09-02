@@ -22,22 +22,35 @@
 
       <form method="post" action="/{{version}}/screener-question-leave-home/answer">
 
-        <div class="nhsuk-form-group">
-          <fieldset class="nhsuk-fieldset">
+        {% if hasErrors %} 
+          {{ errorSummary({
+            "titleText": "There is a problem",
+            "errorList": errorList
+          }) }}
+        {% endif %}
+
+        <div class="nhsuk-form-group{% if hasErrors %} nhsuk-form-group--error{% endif %}">
+          <fieldset class="nhsuk-fieldset"{% if hasErrors %} aria-describedby="self-isolate-leave-home-error"{% endif %}>
             <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
               <h1 class="nhsuk-fieldset__heading">{{ pageTitle }}</h1>
             </legend>
 
+            {% if hasErrors %}
+              <span class="nhsuk-error-message" id="self-isolate-leave-home-error">
+                <span class="nhsuk-u-visually-hidden">Error:</span> Select if you need to leave you home to go to work
+              </span>
+            {% endif %}
+
             <div class="nhsuk-radios">
               <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="self-isolate-1" name="self-isolate-leave-home" type="radio" value="yes" {{ checked("self-isolate-leave-home", "yes") }}>
-                <label class="nhsuk-label nhsuk-radios__label" for="self-isolate-1">
+                <input class="nhsuk-radios__input" id="self-isolate-leave-home" name="self-isolate-leave-home" type="radio" value="yes" {{ checked("self-isolate-leave-home", "yes") }}>
+                <label class="nhsuk-label nhsuk-radios__label" for="self-isolate-leave-home">
                   Yes
                 </label>
               </div>
               <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="self-isolate-2" name="self-isolate-leave-home" type="radio" value="no" {{ checked("self-isolate-leave-home", "no") }}>
-                <label class="nhsuk-label nhsuk-radios__label" for="self-isolate-2">
+                <input class="nhsuk-radios__input" id="self-isolate-leave-home-1" name="self-isolate-leave-home" type="radio" value="no" {{ checked("self-isolate-leave-home", "no") }}>
+                <label class="nhsuk-label nhsuk-radios__label" for="self-isolate-leave-home-1">
                   No
                 </label>
               </div>

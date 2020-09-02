@@ -22,11 +22,24 @@
 
       <form method="post" action="/{{version}}/screener-question-live-work/answer">
 
-        <div class="nhsuk-form-group">
-          <fieldset class="nhsuk-fieldset">
+        {% if hasErrors %} 
+          {{ errorSummary({
+            "titleText": "There is a problem",
+            "errorList": errorList
+          }) }}
+        {% endif %}
+
+        <div class="nhsuk-form-group{% if hasErrors %} nhsuk-form-group--error{% endif %}">
+          <fieldset class="nhsuk-fieldset"{% if hasErrors %}aria-describedby="self-isolate-live-work-error"{% endif %}>
             <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
               <h1 class="nhsuk-fieldset__heading">{{ pageTitle }}</h1>
             </legend>
+
+            {% if hasErrors %}
+              <span class="nhsuk-error-message" id="self-isolate-live-work-error">
+                <span class="nhsuk-u-visually-hidden">Error:</span> Select if you work in an area where shielding advice is in place, but live outside this area
+              </span>
+            {% endif %}
 
             <span class="nhsuk-hint">
               <a href="https://www.gov.uk/government/collections/local-restrictions-areas-with-an-outbreak-of-coronavirus-covid-19" target="_blank" rel="noopener noreferrer">Visit GOV.UK to find out which areas have local restrictions (link opens in a new window)</a>
@@ -34,14 +47,14 @@
 
             <div class="nhsuk-radios">
               <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="self-isolate-1" name="self-isolate-live-work" type="radio" value="yes" {{ checked("self-isolate-live-work", "yes") }}>
-                <label class="nhsuk-label nhsuk-radios__label" for="self-isolate-1">
+                <input class="nhsuk-radios__input" id="self-isolate-live-work" name="self-isolate-live-work" type="radio" value="yes" {{ checked("self-isolate-live-work", "yes") }}>
+                <label class="nhsuk-label nhsuk-radios__label" for="self-isolate-live-work">
                   Yes
                 </label>
               </div>
               <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="self-isolate-2" name="self-isolate-live-work" type="radio" value="no" {{ checked("self-isolate-live-work", "no") }}>
-                <label class="nhsuk-label nhsuk-radios__label" for="self-isolate-2">
+                <input class="nhsuk-radios__input" id="self-isolate-live-work-1" name="self-isolate-live-work" type="radio" value="no" {{ checked("self-isolate-live-work", "no") }}>
+                <label class="nhsuk-label nhsuk-radios__label" for="self-isolate-live-work-1">
                   No
                 </label>
               </div>
