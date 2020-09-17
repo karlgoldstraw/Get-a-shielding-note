@@ -22,7 +22,7 @@
 
       <form method="post" action="/{{version}}/screener-question/answer">
 
-        {% if hasErrors %} 
+        {% if hasErrors %}
           {{ errorSummary({
             "titleText": "There is a problem",
             "errorList": errorList
@@ -44,7 +44,7 @@
             {% endif %}
 
             <span class="nhsuk-hint">
-              You received a letter from the NHS saying you are high risk or on the shielded patient list.
+              You received a letter from the NHS saying you are high risk or on the shielded patients list.
             </span>
 
             <div class="nhsuk-radios">
