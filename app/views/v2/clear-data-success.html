@@ -1,0 +1,22 @@
+{% set pageTitle = "Data cleared" %}
+{% set version = "v1" %}
+
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  {{ pageTitle }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1>{{ pageTitle }}</h1>
+
+      <p>The session data has been cleared.</p>
+      <p><a href="/{{ version }}">Start again</a></p>
+
+    </div>
+  </div>
+{% endblock %}

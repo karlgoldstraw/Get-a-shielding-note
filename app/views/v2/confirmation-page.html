@@ -1,0 +1,47 @@
+{% set pageTitle = "Your details have been submitted" %}
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+{% set version = "v1" %}
+
+{% extends "layout.html" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1>{{ pageTitle }}</h1>
+      <p>We will now check the details you have sent.</p>
+      <p>If we can confirm you’re on the shielded patients list we will send you a shielding note.</p>
+      <p>We will send your note by email to the address you used when you registered with your GP surgery. If we do not have an email address for you, we will send you a letter in the post.</p>
+
+      <h2>What you need to do next</h2>
+      <p>Once you have your shielding note you can give it to your employer if they ask to see it.</p>
+
+      <h3>If you have not received your note</h3>
+      <p>If you have not received your shielding note by email after 1 day check your junk mail folder.</p>
+      <p>If there’s no email in your junk mail folder, wait for a letter in the post – this should take 3 days.</p>
+      <p>If you have not received a letter after 3 days speak to your GP surgery.</p>
+      <p>You can speak to the GP surgery receptionist to explain the situation – they will decide if you need to speak to a GP.</p>
+
+      <div class="nhsuk-warning-callout">
+        <h3 class="nhsuk-warning-callout__label">Important</h3>
+        <p>Check the details your GP surgery has on their system for you are up to date.</p>
+      </div>
+
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <h2>Sign up to the NHS App</h2>
+        <p>If you need medical advice you can also get it by signing up to the NHS App.</p>
+        <p>Owned and run by the NHS, you can use the NHS App to:</p>
+        <ul>
+          <li>get advice about coronavirus</li>
+          <li>order repeat prescriptions</li>
+          <li>book appointments</li>
+          <li>check your symptoms</li>
+        </ul>
+        <p>Read more about how to <a href="https://www.nhs.uk/using-the-nhs/nhs-services/the-nhs-app/">sign up for the NHS App</a>.</p>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

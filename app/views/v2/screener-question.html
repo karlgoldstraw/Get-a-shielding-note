@@ -1,0 +1,76 @@
+{% set pageTitle = "Are you at high risk from coronavirus (clinically extremely vulnerable)?" %}
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+{% set version = "v1" %}
+
+{% extends "layout.html" %}
+
+{% block backLink %}
+<div class="nhsuk-back-link">
+  <a class="nhsuk-back-link__link" href="/{{version}}">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back
+  </a>
+</div>
+{% endblock %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form method="post" action="/{{version}}/screener-question/answer">
+
+        {% if hasErrors %}
+          {{ errorSummary({
+            "titleText": "There is a problem",
+            "errorList": errorList
+          }) }}
+        {% endif %}
+
+        <div class="nhsuk-form-group{% if hasErrors %} nhsuk-form-group--error{% endif %}">
+          <fieldset class="nhsuk-fieldset"{% if hasErrors %} aria-describedby="self-isolate-error"{% endif %}>
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+              <h1 class="nhsuk-fieldset__heading">
+                {{ pageTitle }}
+              </h1>
+            </legend>
+
+            {% if hasErrors %}
+              <span class="nhsuk-error-message" id="self-isolate-error">
+                <span class="nhsuk-u-visually-hidden">Error:</span> Select if you are at high risk from coronavirus (clinically extremely vulnerable)
+              </span>
+            {% endif %}
+
+            <span class="nhsuk-hint">
+              You received a letter from the NHS saying you are high risk or on the shielded patients list.
+            </span>
+
+            <div class="nhsuk-radios">
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="self-isolate" name="self-isolate" type="radio" value="yes" {{ checked("self-isolate", "yes") }}>
+                <label class="nhsuk-label nhsuk-radios__label" for="self-isolate">
+                  Yes
+                </label>
+              </div>
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="self-isolate-1" name="self-isolate" type="radio" value="no" {{ checked("self-isolate", "no") }}>
+                <label class="nhsuk-label nhsuk-radios__label" for="self-isolate-1">
+                  No
+                </label>
+              </div>
+            </div>
+
+          </fieldset>
+        </div>
+
+        <button class="nhsuk-button" type="submit">
+          Continue
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

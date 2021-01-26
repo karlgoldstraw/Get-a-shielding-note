@@ -1,0 +1,30 @@
+{% set pageTitle = "Clear the session data" %}
+{% set version = "v1" %}
+
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  {{ pageTitle }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1>{{ pageTitle }}</h1>
+
+      <form method="post" action="/{{version}}/clear-data-success">
+
+        {{ panel({
+            "HTML": "<p>This will clear all of the data entered in this session</p>"
+        }) }}
+
+        {{ button({
+          "text": "Clear the data"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
