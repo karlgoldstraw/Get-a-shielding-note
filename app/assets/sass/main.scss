@@ -2,7 +2,6 @@
 @import 'node_modules/nhsuk-frontend/packages/nhsuk';
 
 // Components that are not in the NHS.UK frontend library
-@import 'components/panel-confirmation';
 @import 'components/phase-banner';
 @import 'components/related-nav';
 @import 'components/tag';
@@ -15,14 +14,10 @@
   @include nhsuk-responsive-padding(4, 'top');
   margin-bottom: 0;
 }
+
 // IA breadcrumb styles for coronavirus hub pages
 .nhsuk-breadcrumb--hub {
   background-color: transparent;
   padding-bottom: nhsuk-spacing(3);
   padding-top:  20px;
-}
-
-// Overrides auto reload div background colour
-#hc_extension_bkgnd {
-  background-color: $color_nhsuk-grey-4 !important;
 }

@@ -28,9 +28,9 @@
               <h1 class="nhsuk-fieldset__heading">{{ pageTitle }}</h1>
             </legend>
 
-            <span class="nhsuk-hint" id="shielding-start-hint">
+            <div class="nhsuk-hint" id="shielding-start-hint">
               The earliest date you can enter is 1 8 2020.
-            </span>
+            </div>
 
             <div class="nhsuk-date-input" id="example">
               <div class="nhsuk-date-input__item">
@@ -38,7 +38,7 @@
                   <label class="nhsuk-label nhsuk-date-input__label" for="start-day">
                     Day
                   </label>
-                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="start-day" name="start-day" type="number" pattern="[0-9]*" value="{{ data['start-day'] }}">
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="start-day" name="start-day" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['start-day'] }}">
                 </div>
               </div>
               <div class="nhsuk-date-input__item">
@@ -46,7 +46,7 @@
                   <label class="nhsuk-label nhsuk-date-input__label" for="start-month">
                     Month
                   </label>
-                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="start-month" name="start-month" type="number" pattern="[0-9]*" value="{{ data['start-month'] }}">
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="start-month" name="start-month" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['start-month'] }}">
                 </div>
               </div>
               <div class="nhsuk-date-input__item">
@@ -54,7 +54,7 @@
                   <label class="nhsuk-label nhsuk-date-input__label" for="start-year">
                     Year
                   </label>
-                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="start-year" name="start-year" type="number" pattern="[0-9]*" value="{{ data['start-year'] }}">
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="start-year" name="start-year" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['start-year'] }}">
                 </div>
               </div>
             </div>
